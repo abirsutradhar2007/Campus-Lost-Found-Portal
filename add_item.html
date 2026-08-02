@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Items</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div id="Logo">Logo</div>
+            <div class="navbar_links">
+                <a id="homePage" href="index.html">Home</a>
+                <a id="reportPage" href="add_item.html">Report Items</a>
+                <a id="itemsPage" href="itmes.html">View Items</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="formSec">
+            <h1 id="formHeader">Report an Item</h1>
+            <p id="formDescription">Fill in the details below to report a lost or found item</p>
+            <form id="form">
+                <label>Item name
+                <input type="text" id="itemName" class="inputSec" placeholder="Enter item name">
+                </label>
+                <label>category
+                <select id="category" name="category" id="categoryOptions">
+                    <option value="stationary">stationary</option>
+                    <option value="stationary">stationary</option>
+                    <option value="stationary">stationary</option>
+                    <option value="stationary">stationary</option>
+                </select>
+                </label>Select Type
+                    <label id="itemType">Lost
+                        <input type="radio" name="itemType" value="Lost">
+                    </label>
+                    <label id="itemType">Found
+                        <input type="radio" name="itemType" value="Found">
+                    </label>
+                </label>
+                <textarea  id="itemDescription">describe your item
+                </textarea>
+                <label>Lcation
+                <input id="location" type="text" class="inputSec" placeholder="Where did You Find/LOse it">
+                </label>
+                <label>Date
+                <input id="date" type="date" class="inputSec">
+                </label>
+                <label>Contact Number
+                <input id="contact" type="text" class="inputSec" placeholder="Enter your contact number">
+                </label>
+            </form>
+            <button id="submit">Submit</button>
+        </div>
+    </main>
+</body>
+</html>
