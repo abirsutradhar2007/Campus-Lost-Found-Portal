@@ -1,0 +1,530 @@
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background: #080b14;
+    color: #e8edf7;
+
+    min-height: 100vh;
+
+    line-height: 1.5;
+}
+
+
+/* Background */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0, 183, 255, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(130, 80, 255, 0.10),
+            transparent 30%
+        );
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 20px auto;
+    padding: 14px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(17, 22, 35, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 16px;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Logo */
+
+.logo {
+    font-size: 1.25rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #27c8ff,
+            #7c5cff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+/* Navbar links */
+
+.navbar_links {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.navbar_links a {
+    color: #aeb8ca;
+
+    text-decoration: none;
+
+    padding: 9px 14px;
+
+    border-radius: 9px;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.navbar_links a:hover {
+    color: #ffffff;
+
+    background: rgba(39, 200, 255, 0.08);
+
+    transform: translateY(-1px);
+}
+
+
+/* Active page */
+
+.navbar_links a.active {
+    color: #ffffff;
+
+    background: rgba(39, 200, 255, 0.10);
+
+    border: 1px solid rgba(39, 200, 255, 0.15);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: 90%;
+    max-width: 800px;
+
+    margin: 55px auto 80px;
+}
+
+
+/* =========================
+   FORM CARD
+========================= */
+
+.formSec {
+    padding: 40px;
+
+    background: rgba(17, 22, 35, 0.74);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.formHeader {
+    margin-bottom: 32px;
+}
+
+.formHeader h1 {
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    color: #edf2fa;
+
+    margin-bottom: 6px;
+}
+
+.formHeader p {
+    color: #8995aa;
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+#form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 21px;
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.formGroup {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.formGroup > label {
+    color: #b9c3d3;
+
+    font-size: 0.88rem;
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   INPUTS & SELECT
+========================= */
+
+.inputSec,
+#category,
+#itemDescription {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    color: #e7edf8;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 0.92rem;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Placeholder */
+
+.inputSec::placeholder,
+#itemDescription::placeholder {
+    color: #69758a;
+}
+
+
+/* Focus */
+
+.inputSec:focus,
+#category:focus,
+#itemDescription:focus {
+    border-color: rgba(39, 200, 255, 0.45);
+
+    background: rgba(39, 200, 255, 0.035);
+
+    box-shadow:
+        0 0 0 3px rgba(39, 200, 255, 0.06);
+}
+
+
+/* =========================
+   SELECT
+========================= */
+
+#category {
+    cursor: pointer;
+
+    color: #dce4f2;
+}
+
+#category option {
+    background: #111624;
+
+    color: #e7edf8;
+}
+
+
+/* =========================
+   TEXTAREA
+========================= */
+
+#itemDescription {
+    min-height: 130px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   ITEM TYPE
+========================= */
+
+.itemTypeContainer {
+    display: flex;
+
+    gap: 12px;
+}
+
+
+/* Lost / Found boxes */
+
+.itemType {
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 12px;
+
+    color: #aeb8ca;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.itemType:hover {
+    background: rgba(39, 200, 255, 0.06);
+
+    border-color: rgba(39, 200, 255, 0.25);
+
+    transform: translateY(-2px);
+}
+
+
+/* Radio button */
+
+.itemType input {
+    width: 16px;
+    height: 16px;
+
+    cursor: pointer;
+
+    accent-color: #29c5ff;
+}
+
+
+/* =========================
+   DATE
+========================= */
+
+#date {
+    color-scheme: dark;
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+#submit {
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16bde9,
+            #4967ff
+        );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(32, 170, 255, 0.15);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}
+
+#submit:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(32, 170, 255, 0.23);
+}
+
+#submit:active {
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        width: 94%;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 15px;
+    }
+
+    .navbar_links {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .navbar_links a {
+        font-size: 0.85rem;
+
+        padding: 8px 10px;
+    }
+
+
+    main {
+        width: 94%;
+
+        margin-top: 35px;
+    }
+
+
+    .formSec {
+        padding: 28px 22px;
+
+        border-radius: 17px;
+    }
+
+
+    .formHeader h1 {
+        font-size: 1.7rem;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .formSec {
+        padding: 24px 17px;
+    }
+
+
+    .formHeader h1 {
+        font-size: 1.5rem;
+    }
+
+
+    .formHeader p {
+        font-size: 0.88rem;
+    }
+
+
+    .itemTypeContainer {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+}
+

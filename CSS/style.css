@@ -1,0 +1,626 @@
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #080b14;
+    color: #e8edf7;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Subtle background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0, 183, 255, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(130, 80, 255, 0.10),
+            transparent 30%
+        );
+}
+
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
+
+header {
+    width: 100%;
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+
+    padding: 14px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(17, 22, 35, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Logo */
+
+#Logo {
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    background: linear-gradient(
+        90deg,
+        #27c8ff,
+        #7c5cff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+/* Navbar links */
+
+.navbar_links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar_links a {
+    position: relative;
+
+    color: #aeb8ca;
+    text-decoration: none;
+
+    padding: 9px 14px;
+    border-radius: 9px;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.navbar_links a:hover {
+    color: #ffffff;
+    background: rgba(39, 200, 255, 0.08);
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.heroSec {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 70px auto 90px;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+    gap: 60px;
+}
+
+
+/* Left side */
+
+.heroSecLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.banner {
+    max-width: 650px;
+}
+
+.bannerLine {
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.35;
+    font-weight: 750;
+    letter-spacing: -2px;
+}
+
+.bannerLine:first-child {
+    color: #f1f5ff;
+}
+
+.bannerLine:nth-child(2) {
+    background: linear-gradient(
+        90deg,
+        #22c7ff,
+        #6675ff,
+        #9b5cff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#bannerQuote {
+    margin-top: 22px;
+
+    max-width: 530px;
+
+    color: #8e9bb1;
+    font-size: 1.05rem;
+}
+
+
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.heroSecLeftButtons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.heroSecLeftButtons button {
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px 22px;
+
+    cursor: pointer;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* Remove default link appearance */
+
+.heroSecLeftButtons button a {
+    text-decoration: none;
+}
+
+
+/* Report button */
+
+#report {
+    background: linear-gradient(
+        135deg,
+        #14bdea,
+        #3867ff
+    );
+
+    box-shadow: 0 8px 25px rgba(32, 170, 255, 0.18);
+}
+
+#report a {
+    color: white;
+}
+
+#report:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(32, 170, 255, 0.25);
+}
+
+
+/* View button */
+
+#view {
+    background: rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+#view a {
+    color: #c7d0df;
+}
+
+#view:hover {
+    transform: translateY(-3px);
+    background: rgba(124, 92, 255, 0.10);
+    border-color: rgba(124, 92, 255, 0.35);
+}
+
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.herSecRight {
+    display: flex;
+    justify-content: center;
+}
+
+.bannerImg {
+    width: min(100%, 450px);
+    aspect-ratio: 1 / 0.85;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(32, 198, 255, 0.08),
+            rgba(124, 92, 255, 0.08)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.28);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.bannerImg:hover {
+    transform: translateY(-5px);
+    border-color: rgba(39, 200, 255, 0.25);
+}
+
+.bannerImg img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+}
+
+
+/* =========================
+   ITEM STATISTICS
+========================= */
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+
+    margin-bottom: 65px;
+}
+
+.itemsCount {
+    position: relative;
+
+    padding: 28px 25px;
+
+    min-height: 110px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 16px;
+
+    background: rgba(17, 22, 35, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(12px);
+
+    color: #9da9bc;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* Accent line */
+
+.itemsCount::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 20px;
+    bottom: 20px;
+
+    width: 3px;
+
+    border-radius: 5px;
+
+    background: linear-gradient(
+        to bottom,
+        #20c7ff,
+        #725cff
+    );
+}
+
+.itemsCount:hover {
+    transform: translateY(-4px);
+
+    background: rgba(25, 31, 48, 0.82);
+
+    border-color: rgba(39, 200, 255, 0.18);
+}
+
+
+/* =========================
+   RECENT ITEMS
+========================= */
+
+.recentItemsCards {
+    width: 100%;
+}
+
+#recentItemsHeader {
+    margin-bottom: 25px;
+
+    font-size: 1.7rem;
+    font-weight: 650;
+
+    color: #edf2fa;
+}
+
+
+/*
+   Future item cards
+
+   You can use this structure later:
+
+   <div class="item-card">
+       <img src="..." alt="">
+       <div class="item-card-content">
+           ...
+       </div>
+   </div>
+*/
+
+.item-card {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+
+    min-height: 180px;
+
+    margin-bottom: 18px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    background: rgba(17, 22, 35, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.item-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(39, 200, 255, 0.18);
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.22);
+}
+
+
+/* Item image */
+
+.item-card img {
+    width: 100%;
+    height: 100%;
+
+    min-height: 180px;
+
+    object-fit: cover;
+}
+
+
+/* Item information */
+
+.item-card-content {
+    padding: 22px;
+}
+
+.item-card-content h3 {
+    margin-bottom: 7px;
+
+    color: #edf2fa;
+    font-size: 1.15rem;
+}
+
+.item-card-content p {
+    color: #8995aa;
+    font-size: 0.9rem;
+}
+
+
+/* Lost / Found badge */
+
+.item-status {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 10px;
+    margin-bottom: 12px;
+
+    border-radius: 20px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    background: rgba(39, 200, 255, 0.08);
+    color: #48cfff;
+
+    border: 1px solid rgba(39, 200, 255, 0.15);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        width: 94%;
+    }
+
+    .heroSec {
+        width: 94%;
+
+        grid-template-columns: 1fr;
+
+        margin-top: 50px;
+
+        gap: 45px;
+    }
+
+    .heroSecLeft {
+        text-align: center;
+        align-items: center;
+    }
+
+    #bannerQuote {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .heroSecLeftButtons {
+        justify-content: center;
+    }
+
+    .herSecRight {
+        order: -1;
+    }
+
+    .bannerImg {
+        width: min(100%, 500px);
+    }
+
+    main {
+        width: 94%;
+    }
+
+    .items {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+
+        padding: 15px;
+    }
+
+    .navbar_links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .navbar_links a {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+
+    .heroSec {
+        margin-top: 35px;
+        margin-bottom: 60px;
+    }
+
+    .bannerLine {
+        font-size: 2.8rem;
+        letter-spacing: -1px;
+    }
+
+    #bannerQuote {
+        font-size: 0.95rem;
+    }
+
+    .heroSecLeftButtons {
+        width: 100%;
+    }
+
+    .heroSecLeftButtons button {
+        flex: 1;
+        min-width: 130px;
+    }
+
+    .bannerImg {
+        aspect-ratio: 1 / 0.8;
+        border-radius: 18px;
+    }
+
+    .item-card {
+        grid-template-columns: 1fr;
+    }
+
+    .item-card img {
+        height: 200px;
+    }
+}
+

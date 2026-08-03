@@ -1,58 +1,217 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Items</title>
+
+    <title>Report Item | Campus Lost & Found</title>
+
+    <link rel="stylesheet" href="css/add_items.css">
 </head>
+
 <body>
+
     <header>
-        <div class="navbar">
-            <div id="Logo">Logo</div>
+        <nav class="navbar">
+
+            <div class="logo">Campus Lost & Found</div>
+
             <div class="navbar_links">
                 <a id="homePage" href="index.html">Home</a>
                 <a id="reportPage" href="add_item.html">Report Items</a>
                 <a id="itemsPage" href="itmes.html">View Items</a>
             </div>
-        </div>
+        </nav>
     </header>
+
+
     <main>
-        <div class="formSec">
-            <h1 id="formHeader">Report an Item</h1>
-            <p id="formDescription">Fill in the details below to report a lost or found item</p>
+
+        <section class="formSec">
+
+            <div class="formHeader">
+                <h1>Report an Item</h1>
+
+                <p>
+                    Fill in the details below to report a lost or found item.
+                </p>
+            </div>
+
+
             <form id="form">
-                <label>Item name
-                <input type="text" id="itemName" class="inputSec" placeholder="Enter item name">
-                </label>
-                <label>category
-                <select id="category" name="category" id="categoryOptions">
-                    <option value="stationary">stationary</option>
-                    <option value="stationary">stationary</option>
-                    <option value="stationary">stationary</option>
-                    <option value="stationary">stationary</option>
-                </select>
-                </label>Select Type
-                    <label id="itemType">Lost
-                        <input type="radio" name="itemType" value="Lost">
+
+                <!-- Item Name -->
+                <div class="formGroup">
+
+                    <label for="itemName">
+                        Item Name
                     </label>
-                    <label id="itemType">Found
-                        <input type="radio" name="itemType" value="Found">
+
+                    <input
+                        type="text"
+                        id="itemName"
+                        class="inputSec"
+                        placeholder="Enter item name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Category -->
+                <div class="formGroup">
+
+                    <label for="category">
+                        Category
                     </label>
-                </label>
-                <textarea  id="itemDescription">describe your item
-                </textarea>
-                <label>Lcation
-                <input id="location" type="text" class="inputSec" placeholder="Where did You Find/LOse it">
-                </label>
-                <label>Date
-                <input id="date" type="date" class="inputSec">
-                </label>
-                <label>Contact Number
-                <input id="contact" type="text" class="inputSec" placeholder="Enter your contact number">
-                </label>
+
+                    <select id="category" name="category" required>
+
+                        <option value="" disabled selected>
+                            Select a category
+                        </option>
+
+                        <option value="stationery">
+                            Stationery
+                        </option>
+
+                        <option value="electronics">
+                            Electronics
+                        </option>
+
+                        <option value="documents">
+                            Documents
+                        </option>
+
+                        <option value="personal">
+                            Personal Items
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Item Type -->
+                <div class="formGroup">
+
+                    <label>
+                        Item Type
+                    </label>
+
+                    <div class="itemTypeContainer">
+
+                        <label class="itemType">
+                            <input
+                                type="radio"
+                                name="itemType"
+                                value="Lost"
+                                required
+                            >
+
+                            <span>Lost</span>
+                        </label>
+
+
+                        <label class="itemType">
+                            <input
+                                type="radio"
+                                name="itemType"
+                                value="Found"
+                            >
+
+                            <span>Found</span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Description -->
+                <div class="formGroup">
+
+                    <label for="itemDescription">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="itemDescription"
+                        placeholder="Describe the item, its color, brand, identifying features, etc."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Location -->
+                <div class="formGroup">
+
+                    <label for="location">
+                        Location
+                    </label>
+
+                    <input
+                        id="location"
+                        type="text"
+                        class="inputSec"
+                        placeholder="Where did you lose/find it?"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Date -->
+                <div class="formGroup">
+
+                    <label for="date">
+                        Date
+                    </label>
+
+                    <input
+                        id="date"
+                        type="date"
+                        class="inputSec"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Contact -->
+                <div class="formGroup">
+
+                    <label for="contact">
+                        Contact Number
+                    </label>
+
+                    <input
+                        id="contact"
+                        type="tel"
+                        class="inputSec"
+                        placeholder="Enter your contact number"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Submit -->
+                <button id="submit" type="submit">
+                    Report Item
+                </button>
+
             </form>
-            <button id="submit">Submit</button>
-        </div>
+
+        </section>
+
     </main>
+
 </body>
+
 </html>
+
+
