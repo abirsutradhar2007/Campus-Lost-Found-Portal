@@ -21,59 +21,32 @@
         <div class="searchBar">
             <h2 id="heading">Browse Items</h2>
             <p id="description">Search and filter reported items</p>
-            <input type="search" placeholder="Search items..">
+            <input id="searchItem" type="search" placeholder="Search items..">
         </div>
         <div class="filter">
             <label for="category"> Select Category
                 <select  id="category">
-                    <option value="stationary">stationary</option>
-                    <option value="stationary">stationary</option>
-                    <option value="stationary">stationary</option>
-                    <option value="stationary">stationary</option>
+                    <option value="all">All</option>
+                    <option value="stationery">Stationery</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="documents">Documents</option>
+                    <option value="personal item">Personal Items</option>
                 </select>
            
             </label>
-            <label for="type">Select Type
-                <select  id="type">
-                    <option value="stationary">stationary</option>
-                    <option value="stationary">stationary</option>
-                    <option value="stationary">stationary</option>
-                    <option value="stationary">stationary</option>
-                </select>
-            
-            </label>
             <label for="sortBy">Sort By
                 <select  id="sortBy">
-                    <option value="stationary">stationary</option>
-                    <option value="stationary">stationary</option>
-                    <option value="stationary">stationary</option>
-                    <option value="stationary">stationary</option>
+                    <option value="all">All</option>
+                    <option value="Lost">Lost</option>
+                    <option value="Found">Found</option>
                 </select>
             
             </label>
         </div>
         <div class="allCards">
-            <div class="cards">
-                <h3 id="status">Lost</h3>
-                <p id="name">wallet</p>
-                <p id="location">library</p>
-            </div>
-            <div class="cards">
-                <h3 id="status">Lost</h3>
-                <p id="name">wallet</p>
-                <p id="location">library</p>
-            </div>
-            <div class="cards">
-                <h3 id="status">Lost</h3>
-                <p id="name">wallet</p>
-                <p id="location">library</p>
-            </div>
-            <div class="cards">
-                <h3 id="status">Lost</h3>
-                <p id="name">wallet</p>
-                <p id="location">library</p>
-            </div>
+            
         </div>
     </main>
+    <script src="JS/items.js"></script>
 </body>
 </html>

@@ -228,9 +228,9 @@ main {
 
 .filter {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
-    gap: 15px;
+    gap: 35px;
 
     padding: 22px 25px;
 
@@ -426,10 +426,11 @@ main {
    LOCATION
 ========================= */
 
-#location {
-    color: #8995aa;
+#location, #category, #contact, #date, #itemDescription  {
+    color: #a7b3c7;
 
-    font-size: 0.88rem;
+    font-size: 1.2 rem;
+    font-weight: bolder;
 
     text-transform: capitalize;
 
@@ -437,11 +438,19 @@ main {
 
     padding-left: 18px;
 }
+#contact {
+    color: #8995aa;
 
+    font-size: 1.2 rem;
+    font-weight: bolder;
 
-/* Location icon */
+    text-transform: capitalize;
 
-#location::before {
+    position: relative;
+
+    padding-left: 18px;
+}
+/* #contact::before {
     content: "⌖";
 
     position: absolute;
@@ -451,7 +460,70 @@ main {
     color: #36caff;
 
     font-size: 1rem;
+} */
+
+
+/* Location icon */
+
+/* #location::before {
+    content: "⌖";
+
+    position: absolute;
+
+    left: 0;
+
+    color: #36caff;
+
+    font-size: 1rem;
+} */
+ #deleteCard {
+    width: 80%;
+
+    margin-top : 8px;
+    margin-left : 8px;
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #b10303,
+            #f35959
+        );
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(209, 5, 5, 0.15);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
 }
+
+#deleteCard:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(225, 3, 3, 0.23);
+}
+
+#deleteCard:active {
+    transform: translateY(-1px);
+}
+
 
 
 /* =========================
