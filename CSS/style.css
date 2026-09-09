@@ -359,10 +359,22 @@ main {
 
     backdrop-filter: blur(12px);
 
-    color: #93ece7;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    background: linear-gradient(
+        90deg,
+        #27c8ff,
+        #7c5cff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 
     font-size: larger;
-    font-weight: 500;
+    font-weight: bolder;
 
     transition:
         transform 0.3s ease,
@@ -395,9 +407,9 @@ main {
 .itemsCount:hover {
     transform: translateY(-4px);
 
-    background: rgba(25, 31, 48, 0.82);
+    /* background: rgba(25, 31, 48, 0.82);
 
-    border-color: rgba(39, 200, 255, 0.18);
+    border-color: rgba(39, 200, 255, 0.18); */
 }
 
 

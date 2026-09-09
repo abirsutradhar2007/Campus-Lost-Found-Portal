@@ -13,9 +13,9 @@ let founditemCount = allItems.filter((item) => item.itemType == "Found").length
 // foundItems.innerHTML += founditemCount
 displayCount()
 function displayCount () {
-    totalItems.innerHTML = `Total Items -> ${totalItemCount}`
-    lostItems.innerHTML = `Lost Items -> ${lostitemCount}`
-    foundItems.innerHTML = `Found Items -> ${founditemCount}`
+    totalItems.innerHTML = `Total Items : ${totalItemCount}`
+    lostItems.innerHTML = `Lost Items : ${lostitemCount}`
+    foundItems.innerHTML = `Found Items : ${founditemCount}`
 }
 
 const allCardsContainer = document.querySelector(".allCards")
